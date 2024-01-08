@@ -44,7 +44,7 @@ async def get_rooms_keyboard(page):
     for room in page_items:
         if room[2] == 0:
             buttons.append([types.InlineKeyboardButton(text=f"🔎 #{room[0]}", callback_data=f"join_room:{room[0]}:open")])
-        elif room[2] == -1:
+        elif room[2] == 1:
             buttons.append([types.InlineKeyboardButton(text=f"🔐 #{room[0]}", callback_data=f"join_room:{room[0]}:private")])
         else:
             buttons.append([types.InlineKeyboardButton(text=f"🔒 #{room[0]}", callback_data=f"join_room:{room[0]}:close")])
